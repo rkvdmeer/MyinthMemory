@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+
+  devise_for :admin, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
+  
+  mount RailsAdmin::Engine => '/store', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+  root  'rails_admin/main#dashboard'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -13,7 +17,10 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  get 'allpoms', to: 'poms#index'
+  get 'allpomswithtags', to: 'poms#allpomswithtags'
+  
+  get 'alltags', to: 'tags#index'
   # Example resource route with options:
   #   resources :products do
   #     member do
