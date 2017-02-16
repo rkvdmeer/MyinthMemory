@@ -1,4 +1,7 @@
 class TagsController < ApplicationController
+  
+  # cancancan
+  load_and_authorize_resource
 
   # GET /tags.json
   def index

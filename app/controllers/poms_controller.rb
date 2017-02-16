@@ -1,4 +1,8 @@
 class PomsController < ApplicationController
+  
+  # cancancan
+  load_and_authorize_resource
+  
   # before_action :set_pom, only: [:show, :edit, :update, :destroy]
 
   # GET /poms.json

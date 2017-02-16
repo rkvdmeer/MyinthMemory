@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :admin, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
+  devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
   
   mount RailsAdmin::Engine => '/store', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.
